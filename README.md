@@ -1,5 +1,9 @@
 ## Executar o projeto
 
+```bash 
+node v22.13.1
+```
+
 ```bash
 $ yarn install
 ```
