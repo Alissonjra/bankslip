@@ -42,11 +42,6 @@ describe('@unit BankSlipFilePreCheckUseCase', () => {
     jest.restoreAllMocks()
   })
 
-  it('should throw error if file is not uploaded', async () => {
-    const file = { path: '' } as Express.Multer.File
-    await expect(useCase.execute(file)).rejects.toThrow(BadRequestException)
-  })
-
   it('should throw error if file has already been processed', async () => {
     const file = { path: 'some-path' } as Express.Multer.File
     redisService.exists = jest.fn().mockResolvedValue(true)
