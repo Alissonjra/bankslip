@@ -1,3 +1,16 @@
+## Projeto bankslip 📑
+A partir de um arquivo .csv o sistema deve gerar boletos(salvar no banco de dados).
+A ideia do projeto é conseguir lidar com o volume de processamento sem degradar o desempenho. 
+
+O projeto foi desenvolvido em Nodejs utilizando o framework Nestjs. 
+Foram utilizados as seguintes ferramentas 🔨: 
+- Redis
+- Postgres
+- Stream 
+- RabbitMQ
+- Evento de dominio 
+- Docker 
+
 ## Executar o projeto
 
 ```bash 
@@ -34,7 +47,7 @@ No diretorio (bankslip\controllers\tests\mock\fileMock.csv) tem um arquivo com 1
   Caso ocorra algum erro durante o processamento do arquivo a chave é removida do redis permitindo o upload novamente.
 
 - Validação de registros duplicados: <br />
-  Antes de processar/inserir um registro no banco eu verifico no redis se consta uma key (processed: governmentId-debId)
+  Antes de processar/inserir um registro no banco eu verifico no redis se consta uma key (processed: governmentId-debtId)
   Caso exista não processa/insere esse registro.
   Sempre que é feito o processamento insiro essa key no redis a fim de evitar processamento duplicado
 
